@@ -73,10 +73,10 @@ module.exports.shengcDocx = function (options) {
     docx.createP ({ align: 'center' })
   
     var pObj = docx.createP()
-    pObj.addText(`      甲方（购货方）：${allOptions.comapayName}`, {font_face: '宋体', font_size: 15})
+    pObj.addText(`      甲方（购货方）：${allOptions.purchaser}`, {font_face: '宋体', font_size: 15})
     docx.createP ({ align: 'center' })
     var pObj = docx.createP()
-    pObj.addText(`      已方（销售方）：${allOptions.comapayName}`, {font_face: '宋体', font_size: 15})
+    pObj.addText(`      已方（销售方）：${allOptions.seller}`, {font_face: '宋体', font_size: 15})
     
     // 空行
     docx.createP ({ align: 'center' })
@@ -87,10 +87,10 @@ module.exports.shengcDocx = function (options) {
   
     var pObj = docx.createP()
     pObj.addText('购货方（简称甲方）：', {font_face: '宋体', font_size: 10.5, bold: true})
-    pObj.addText(`${allOptions.comapayName}`, {font_face: '宋体', font_size: 10.5})
+    pObj.addText(`${allOptions.purchaser}`, {font_face: '宋体', font_size: 10.5})
     var pObj = docx.createP()
     pObj.addText('销售方（简称乙方）：', {font_face: '宋体', font_size: 10.5, bold: true})
-    pObj.addText(`${allOptions.comapayName}`, {font_face: '宋体', font_size: 10.5})
+    pObj.addText(`${allOptions.seller}`, {font_face: '宋体', font_size: 10.5})
     var pObj = docx.createP()
     pObj.addText('销售方（简称乙方）：', {font_face: '宋体', font_size: 10.5})
   

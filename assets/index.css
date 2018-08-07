@@ -1,0 +1,40 @@
+.my-index {
+  padding: 0 20px;
+}
+
+.title {
+  text-align: center;
+}
+
+.form-block {
+  display: flex;
+}
+
+.form-item {
+  width: 30%;
+  padding: 20px 0;
+}
+
+.form-item span {
+  font-size: 14px;
+  font-weight: 200;
+}
+
+.form-item input {
+  background: transparent;
+  border: 0px;
+  border-bottom: 1px solid rgba(173, 216, 230, .3);
+  font-size: 14px;
+  line-height: 14px;
+  transition: border-bottom .6s;
+  border-radius: 0;
+  outline:none;
+  -webkit-transition: border-bottom .6s;
+  -moz-transition: border-bottom .6s;
+  -ms-transition: border-bottom .6s;
+  -o-transition: border-bottom .6s;
+}
+
+.form-item input:focus {
+  border-bottom: 1px solid rgb(173, 216, 230);
+}

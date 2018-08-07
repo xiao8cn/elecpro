@@ -4,9 +4,12 @@ const docUtil = require('./word.js')
 document.getElementById('docInit')
   .addEventListener('click', () => {
     let contractNo = document.getElementById('contractNo').value
-    console.log(contractNo)
+    let purchaser = document.getElementById('purchaser').value
+    let seller = document.getElementById('seller').value
     let options = {
-      contractNo
+      contractNo,
+      seller,
+      purchaser
     }
     docUtil.shengcDocx(options)
       .then(() => {
