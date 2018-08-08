@@ -9,8 +9,7 @@ var fs = require('fs');
 module.exports.shengcDocx = function (options) {
   return new Promise(resolve => {
     var defaultOption = {
-      contractNo: '123456',
-      comapayName: '测试公司'
+      contractno: '123456'
     }
   
     var allOptions = Object.assign({}, defaultOption, options)
@@ -31,7 +30,7 @@ module.exports.shengcDocx = function (options) {
     });
   
     var table = [
-      ['合同编号',`${allOptions.contractNo}`],
+      ['合同编号',`${allOptions.contractno}`],
       ['签订地点',''],
       ['签订日期',''],
     ]

@@ -1,5 +1,5 @@
 .my-index {
-  padding: 0 20px;
+  padding: 20px;
 }
 
 .title {
@@ -8,11 +8,27 @@
 
 .form-block {
   display: flex;
+  flex-flow: column;
+  border: 1px solid rgb(94, 45, 45);
+  /* padding: 10px 10px; */
+}
+
+.form-block .form-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-block .form-title {
+  font-size: 24px;
+  display: block;
+  background-color: lightgreen;
+  padding: 10px 10px;
 }
 
 .form-item {
-  width: 30%;
-  padding: 20px 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  flex-flow: column;
 }
 
 .form-item span {
@@ -24,8 +40,8 @@
   background: transparent;
   border: 0px;
   border-bottom: 1px solid rgba(173, 216, 230, .3);
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 16px;
+  line-height: 16px;
   transition: border-bottom .6s;
   border-radius: 0;
   outline:none;
