@@ -1,5 +1,7 @@
 const {ipcRenderer} = require('electron')
 const docUtil = require('./word.js')
+const pptUtil = require('./ppt.js')
+const xlsxUtil = require('./xlsx.js')
 const path = require('path')
 const fs = require('fs')
 
@@ -39,5 +41,43 @@ $('#docInit').on('click', function() {
   docUtil.shengcDocx(options)
     .then(() => {
       ipcRenderer.send('test', 'ping')
+    })
+  pptUtil.shengcPpt()
+    .then(() => {
+      ipcRenderer.send('ppt')
+    })
+})/**
+ * 生成合同 click 事件
+ */
+$('#docInit').on('click', function() {
+  let options = {}
+  Array.from(document.querySelectorAll('form input'))
+    .forEach(item => {
+      options[item.id] = item.value
+    })
+  console.log(options)
+  docUtil.shengcDocx(options)
+    .then(() => {
+      ipcRenderer.send('test', 'ping')
+    })
+})
+
+/**
+ * 生成ppt 事件
+ */
+$('#docInit').on('click', function() {
+  pptUtil.shengcPpt()
+    .then(() => {
+      ipcRenderer.send('ppt')
+    })
+})
+
+/**
+ * 生成xlsx 事件
+ */
+$('#xlsxInit').on('click', function() {
+  xlsxUtil.shengcXlsx()
+    .then(() => {
+      ipcRenderer.send('xlsx')
     })
 })

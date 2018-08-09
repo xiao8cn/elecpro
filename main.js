@@ -58,3 +58,15 @@ const path = require('path')
     console.log(pdfPath)
     shell.openExternal(`file://${pdfPath}`)
   })
+
+  ipcMain.on('ppt', () => {
+    const pdfPath = path.join(os.tmpdir(), 'out.pptx')
+    console.log(pdfPath)
+    shell.openExternal(`file://${pdfPath}`)
+  })
+
+  ipcMain.on('xlsx', () => {
+    const pdfPath = path.join(os.tmpdir(), 'out.xlsx')
+    console.log(pdfPath)
+    shell.openExternal(`file://${pdfPath}`)
+  })

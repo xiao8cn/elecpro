@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "electron-packager": "^12.1.0",
+    "loadsh": "^1.0.1",
     "officegen": "^0.4.5"
   }
 }
