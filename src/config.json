@@ -1,0 +1,25 @@
+{
+  "forms": [
+    {
+      "label": "合同号",
+      "type": "text",
+      "placeholder": "请输入合同号",
+      "key": "contractno",
+      "default_value": ""
+    },
+    {
+      "label": "购货方",
+      "type": "text",
+      "placeholder": "请输入购货方",
+      "key": "purchaser",
+      "default_value": ""
+    },
+    {
+      "label": "销售方",
+      "type": "text",
+      "placeholder": "请输入销售方",
+      "key": "seller",
+      "default_value": ""
+    }
+  ]
+}

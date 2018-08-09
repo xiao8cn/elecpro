@@ -1,8 +1,8 @@
-var async = require ( 'async' );
-var officegen = require('officegen');
-
-var fs = require('fs');
-// var path = require('path');
+const async = require ( 'async' )
+const officegen = require('officegen')
+const fs = require('fs')
+const path = require('path')
+const os = require('os')
 
 // var themeXml = fs.readFileSync ( path.resolve ( __dirname, 'themes/testTheme.xml' ), 'utf8' );
 
@@ -125,7 +125,7 @@ module.exports.shengcDocx = function (options) {
     pObj.addText('）； 大写：')
     pObj.addText(' 人民币      圆整。', { bold: true, underline: true })
   
-    var out = fs.createWriteStream ( 'static/out.docx' );
+    var out = fs.createWriteStream (path.join(os.tmpdir(), 'out.docx'))
     
     out.on ( 'error', function ( err ) {
       console.log ( err );

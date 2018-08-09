@@ -1,13 +1,10 @@
 const {app, BrowserWindow, ipcMain, shell} = require('electron')
-const fs = require('fs')
 const os = require('os')
 const path = require('path')  
 
   // Keep a global reference of the window object, if you don't, the window will
   // be closed automatically when the JavaScript object is garbage collected.
   let win
-
-  let sec
   
   function createWindow () {
     // 创建浏览器窗口。
@@ -17,7 +14,7 @@ const path = require('path')
     win.loadFile('index.html')
   
     // 打开开发者工具
-    // win.webContents.openDevTools()
+    win.webContents.openDevTools()
  
     ses = win.webContents.session
 
@@ -53,10 +50,11 @@ const path = require('path')
       createWindow()
     }
   })
-  
+
   // 在这个文件中，你可以续写应用剩下主进程代码。
   // 也可以拆分成几个文件，然后用 require 导入。
   ipcMain.on('test', () => {
-    const pdfPath = path.join(__dirname, './static/out.docx')
+    const pdfPath = path.join(os.tmpdir(), 'out.docx')
+    console.log(pdfPath)
     shell.openExternal(`file://${pdfPath}`)
   })
