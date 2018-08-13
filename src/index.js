@@ -19,12 +19,27 @@ function init() {
   let forms = config.forms
   let dom = $('.forms .row')
   forms.forEach(item => {
-    dom.append(`
-      <div class="col form-item">
-        <label for="${item.type}">${item.label}</label>
-        <input type="${item.type}" id="${item.key}" placeholder="${item.placeholder}">
-      </div>
-    `)
+    if (item.type === "text" || item.type === "number" || item.type === "date") {
+      dom.append(`
+        <div class="col-3 form-item">
+          <label for="${item.type}">${item.label}</label>
+          <input value="${item.default_value}" type="${item.type}" id="${item.key}" placeholder="${item.placeholder}">
+        </div>
+      `)
+    } else if (item.type === "select") {
+      let optionsHtml = ''
+      item.options.forEach(op => {
+        optionsHtml += `<option value="${op.value}">${op.label}</option>`
+      })
+      dom.append(`
+        <div class="col-3 form-group">
+          <label for="exampleFormControlSelect1">${item.label}</label>
+          <select class="form-control" id="${item.key}">
+            ${optionsHtml}
+          </select>
+        </div>
+      `)
+    }
   })
 }
 
@@ -37,25 +52,10 @@ $('#docInit').on('click', function() {
     .forEach(item => {
       options[item.id] = item.value
     })
-  console.log(options)
-  docUtil.shengcDocx(options)
-    .then(() => {
-      ipcRenderer.send('test', 'ping')
-    })
-  pptUtil.shengcPpt()
-    .then(() => {
-      ipcRenderer.send('ppt')
-    })
-})/**
- * 生成合同 click 事件
- */
-$('#docInit').on('click', function() {
-  let options = {}
-  Array.from(document.querySelectorAll('form input'))
+    Array.from(document.querySelectorAll('form select'))
     .forEach(item => {
       options[item.id] = item.value
     })
-  console.log(options)
   docUtil.shengcDocx(options)
     .then(() => {
       ipcRenderer.send('test', 'ping')
@@ -65,7 +65,7 @@ $('#docInit').on('click', function() {
 /**
  * 生成ppt 事件
  */
-$('#docInit').on('click', function() {
+$('#pptInit').on('click', function() {
   pptUtil.shengcPpt()
     .then(() => {
       ipcRenderer.send('ppt')

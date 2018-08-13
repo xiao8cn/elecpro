@@ -8,10 +8,17 @@
       "default_value": ""
     },
     {
-      "label": "购货方",
-      "type": "text",
-      "placeholder": "请输入购货方",
-      "key": "purchaser",
+      "label": "签订日期",
+      "type": "date",
+      "placeholder": "请填写日期",
+      "key": "condate",
+      "default_value": ""
+    },
+    {
+      "label": "交货日期",
+      "type": "date",
+      "placeholder": "请填写日期",
+      "key": "paydate",
       "default_value": ""
     },
     {
@@ -20,6 +27,92 @@
       "placeholder": "请输入销售方",
       "key": "seller",
       "default_value": ""
+    },
+    {
+      "label": "合同金额",
+      "type": "number",
+      "placeholder": "请输入合同金额",
+      "key": "connumber",
+      "default_value": ""
+    },
+    {
+      "label": "质量技术标准",
+      "type": "select",
+      "key": "standid",
+      "options": [
+        {
+          "label": "国家标准",
+          "value": "1"
+        },
+        {
+          "label": "行业标准",
+          "value": "2"
+        },
+        {
+          "label": "附件",
+          "value": "3"
+        }
+      ],
+      "default_value": ""
+    },
+    {
+      "label": "结算方式",
+      "type": "select",
+      "key": "balancetype",
+      "options": [
+        {
+          "label": "先货后款(货已验收合格)",
+          "value": "1"
+        },
+        {
+          "label": "先货后款(货未到)",
+          "value": "2"
+        },
+        {
+          "label": "先款后货",
+          "value": "3"
+        }
+      ],
+      "default_value": ""
+    },
+    {
+      "label": "运输费用承担方",
+      "type": "select",
+      "key": "saletype",
+      "options": [
+        {
+          "label": "乙方",
+          "value": "1"
+        },
+        {
+          "label": "甲方",
+          "value": "2"
+        }
+      ],
+      "default_value": ""
+    },
+    {
+      "label": "有无预付款",
+      "type": "select",
+      "key": "ywyfktype",
+      "options": [
+        {
+          "label": "无",
+          "value": "1"
+        },
+        {
+          "label": "有",
+          "value": "2"
+        }
+      ],
+      "default_value": ""
+    },
+    {
+      "label": "质保期",
+      "type": "number",
+      "placeholder": "请输入1 - 24",
+      "key": "quilty",
+      "default_value": "1"
     }
   ]
 }

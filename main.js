@@ -8,10 +8,10 @@ const path = require('path')
   
   function createWindow () {
     // 创建浏览器窗口。
-    win = new BrowserWindow({width: 800, height: 600})
+    win = new BrowserWindow({width: 1200, height: 800})
   
     // 然后加载应用的 index.html。
-    win.loadFile('index.html')
+    win.loadFile('index.html') // webview
   
     // 打开开发者工具
     win.webContents.openDevTools()
